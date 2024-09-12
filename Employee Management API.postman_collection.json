@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "185b1c4a-a9af-4b1e-b1cc-2bebcd313555",
+		"name": "Employee Management API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36489485"
+	},
+	"item": [
+		{
+			"name": "List All Employees",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{baseURL}}/employees",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employees"
+					]
+				},
+				"description": "Retrieve a list of all employees and their information from the database."
+			},
+			"response": []
+		},
+		{
+			"name": "Read Employee Information",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/employee/13",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"employee",
+						"13"
+					]
+				},
+				"description": "Fetch detailed information about a specific employee by their ID."
+			},
+			"response": []
+		},
+		{
+			"name": "Add New Employee",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"status\": \"success\",\r\n  \"data\": {\r\n    \"id\": 30,\r\n    \"employee_name\": \"Felipe Barcelos\",\r\n    \"employee_salary\": 156000,\r\n    \"employee_age\": 31,\r\n    \"profile_image\": \"\"\r\n  }\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/create",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"create"
+					]
+				},
+				"description": "Add a new employee to the database with the provided details."
+			},
+			"response": []
+		},
+		{
+			"name": "Update Employee Information",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"status\": \"success\",\r\n    \"data\": {\r\n        \"name\": \"Felipe Barcelos\",\r\n        \"salary\": \"200000\",\r\n        \"age\": \"31\",\r\n        \"id\": 30\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/update/30",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"update",
+						"30"
+					]
+				},
+				"description": "Update the information of an existing employee in the database."
+			},
+			"response": []
+		},
+		{
+			"name": "Remove Employee from Database",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{baseURL}}/delete/30",
+					"host": [
+						"{{baseURL}}"
+					],
+					"path": [
+						"delete",
+						"30"
+					]
+				},
+				"description": "Remove an employee and their information from the database using their ID."
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "baseURL",
+			"value": "https://dummy.restapiexample.com/api/v1"
+		}
+	]
+}
